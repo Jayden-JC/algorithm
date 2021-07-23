@@ -27,4 +27,4 @@ for v in visited.values():
     if v == True:
         result += 1
         
-print(result-1)   # 1¹ø ÄÄÇ»ÅÍ Á¦¿Ü
+print(result-1)   # 1ë²ˆ ì»´í“¨í„° ì œì™¸
