@@ -7,15 +7,15 @@ for i in range(n):
 remaining_time= 3*60+30
 
 for answer in answers:
-    if answer[1] == 'N' or answer[1] == 'P':   # Á¤´äÀ» ¸ÂÃßÁö ¸øÇÑ °æ¿ì³ª ¹®Á¦¸¦ ½ºÅµÇÑ °æ¿ì
+    if answer[1] == 'N' or answer[1] == 'P':   # ì •ë‹µì„ ë§ì¶”ì§€ ëª»í•œ ê²½ìš°ë‚˜ ë¬¸ì œë¥¼ ìŠ¤í‚µí•œ ê²½ìš°
         remaining_time -= answer[0]
         if remaining_time <= 0:
             break
-    else:   # Á¤´äÀ» ¸ÂÃá °æ¿ì
+    else:   # ì •ë‹µì„ ë§ì¶˜ ê²½ìš°
         remaining_time -= answer[0]
         if remaining_time <= 0:
             break
         else:
-            k = k + 1 if k+1<=8 else 1   # ÆøÅºÀ» ¹Ù·Î ¿ŞÂÊ¿¡ ÀÖ´Â ÇÃ·¹ÀÌ¾î¿¡°Ô ³Ñ°ÜÁÜ
+            k = k + 1 if k+1<=8 else 1   # í­íƒ„ì„ ë°”ë¡œ ì™¼ìª½ì— ìˆëŠ” í”Œë ˆì´ì–´ì—ê²Œ ë„˜ê²¨ì¤Œ
             
 print(k)

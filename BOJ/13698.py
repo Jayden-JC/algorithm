@@ -1,5 +1,5 @@
 order = input()
-loc_dict = {1:'c1', 2:'c2', 3:'c3', 4:'c4'}   # ÄÅ ³× °³ À§Ä¡('c1' : ÀÛÀº °ø, 'c4' : Å« °ø)
+loc_dict = {1:'c1', 2:'c2', 3:'c3', 4:'c4'}   # ì»µ ë„¤ ê°œ ìœ„ì¹˜('c1' : ì‘ì€ ê³µ, 'c4' : í° ê³µ)
 for o in order:
     if o == 'A':
         loc_dict[1], loc_dict[2] = loc_dict[2], loc_dict[1]

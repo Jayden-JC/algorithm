@@ -1,10 +1,10 @@
 total = int(input())
-change = 1000 - total   # °Å½º¸§µ·
+change = 1000 - total   # ê±°ìŠ¤ë¦„ëˆ
 types = (500, 100, 50, 10, 5, 1)
 count = 0
 for t in types:
-    count += int(change // t)   # Á¾·ùº°·Î °³¼ö¸¦ ´õÇÔ
-    change = change % t   # °Å½º¸§µ· ¾÷µ¥ÀÌÆ®
-    if change == 0:   # °Å½º¸§µ·ÀÌ 0ÀÎ °æ¿ì
+    count += int(change // t)   # ì¢…ë¥˜ë³„ë¡œ ê°œìˆ˜ë¥¼ ë”í•¨
+    change = change % t   # ê±°ìŠ¤ë¦„ëˆ ì—…ë°ì´íŠ¸
+    if change == 0:   # ê±°ìŠ¤ë¦„ëˆì´ 0ì¸ ê²½ìš°
         print(count)
         break

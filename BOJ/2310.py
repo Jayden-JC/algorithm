@@ -2,28 +2,28 @@ from collections import deque
 
 def bfs(graph, start, visited):
     money = 0
-    if graph[start][0] == 'L':   # ·¹ÇÁ¸®ÄÜÀÌ ÀÖ´Â °æ¿ì
-        if money < graph[start][1]:   # ¼ÒÁö±İÀÌ ÀÏÁ¤·® ¹Ì¸¸ÀÎ °æ¿ì
-            money = graph[start][1]   # ÀÏÁ¤·®ÀÌ µÇµµ·Ï Ã¤¿öÁØ´Ù.
-    elif graph[start][0] == 'T':   # Æ®·ÑÀÌ ÀÖ´Â °æ¿ì
-        if money < graph[start][1]:   # ¼ÒÁö±İÀÌ ÅëÇà·á ¹Ì¸¸ÀÎ °æ¿ì
-            return 'No'   # °¥ ¼ö ¾øÀ½
+    if graph[start][0] == 'L':   # ë ˆí”„ë¦¬ì½˜ì´ ìˆëŠ” ê²½ìš°
+        if money < graph[start][1]:   # ì†Œì§€ê¸ˆì´ ì¼ì •ëŸ‰ ë¯¸ë§Œì¸ ê²½ìš°
+            money = graph[start][1]   # ì¼ì •ëŸ‰ì´ ë˜ë„ë¡ ì±„ì›Œì¤€ë‹¤.
+    elif graph[start][0] == 'T':   # íŠ¸ë¡¤ì´ ìˆëŠ” ê²½ìš°
+        if money < graph[start][1]:   # ì†Œì§€ê¸ˆì´ í†µí–‰ë£Œ ë¯¸ë§Œì¸ ê²½ìš°
+            return 'No'   # ê°ˆ ìˆ˜ ì—†ìŒ
         else:
             money -= graph[start][1]
     queue = deque([start])
-    visited[start] = True   # ¹æ¹® Ã³¸®
+    visited[start] = True   # ë°©ë¬¸ ì²˜ë¦¬
     while queue:
         v = queue.popleft()
-        if v == len(graph):   # n¹ø ¹æÀ» ¹æ¹®ÇÑ °æ¿ì
+        if v == len(graph):   # në²ˆ ë°©ì„ ë°©ë¬¸í•œ ê²½ìš°
             return 'Yes'
         for i in graph[v][2]:
             if visited[i] != True:
-                if graph[i][0] == 'L':   # ·¹ÇÁ¸®ÄÜÀÌ ÀÖ´Â °æ¿ì
-                    if money < graph[i][1]:   # ¼ÒÁö±İÀÌ ÀÏÁ¤·® ¹Ì¸¸ÀÎ °æ¿ì
-                        money = graph[i][1]   # ÀÏÁ¤·®ÀÌ µÇµµ·Ï Ã¤¿öÁØ´Ù.
-                elif graph[i][0] == 'T':   # Æ®·ÑÀÌ ÀÖ´Â °æ¿ì
-                    if money < graph[i][1]:   # ¼ÒÁö±İÀÌ ÅëÇà·á ¹Ì¸¸ÀÎ °æ¿ì
-                        continue   # °¥ ¼ö ¾øÀ½
+                if graph[i][0] == 'L':   # ë ˆí”„ë¦¬ì½˜ì´ ìˆëŠ” ê²½ìš°
+                    if money < graph[i][1]:   # ì†Œì§€ê¸ˆì´ ì¼ì •ëŸ‰ ë¯¸ë§Œì¸ ê²½ìš°
+                        money = graph[i][1]   # ì¼ì •ëŸ‰ì´ ë˜ë„ë¡ ì±„ì›Œì¤€ë‹¤.
+                elif graph[i][0] == 'T':   # íŠ¸ë¡¤ì´ ìˆëŠ” ê²½ìš°
+                    if money < graph[i][1]:   # ì†Œì§€ê¸ˆì´ í†µí–‰ë£Œ ë¯¸ë§Œì¸ ê²½ìš°
+                        continue   # ê°ˆ ìˆ˜ ì—†ìŒ
                     else:
                         money -= graph[i][1]
                 queue.append(i)
@@ -36,8 +36,8 @@ while n != 0:
     visited = {k:False for k in range(1,n+1)}
     for i in range(1, n+1):
         info = list(input().split())
-        graph[i].append(info[0])   # ¹æÀÇ ³»¿ë¹°
-        graph[i].append(int(info[1]))   # ·¹ÇÁ¸®ÄÜÀÌ³ª Æ®·ÑÀÌ Á¤ÇØ³õÀº ±İ¾×
-        graph[i].append(list(map(int, info[2:-1])))   # ´Ù¸¥ ¹æÀ¸·Î °¥ ¼ö ÀÖ´Â ¹®ÀÇ ¹øÈ£µé
+        graph[i].append(info[0])   # ë°©ì˜ ë‚´ìš©ë¬¼
+        graph[i].append(int(info[1]))   # ë ˆí”„ë¦¬ì½˜ì´ë‚˜ íŠ¸ë¡¤ì´ ì •í•´ë†“ì€ ê¸ˆì•¡
+        graph[i].append(list(map(int, info[2:-1])))   # ë‹¤ë¥¸ ë°©ìœ¼ë¡œ ê°ˆ ìˆ˜ ìˆëŠ” ë¬¸ì˜ ë²ˆí˜¸ë“¤
     print(bfs(graph, 1, visited))
     n = int(input())

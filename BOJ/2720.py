@@ -2,12 +2,12 @@ t = int(input())
 coin_tuple = (0.25*100, 0.10*100, 0.05*100, 0.01*100)
 
 for i in range(t):
-    coin_dict = {k:0 for k in coin_tuple}   # µ¿Àü µñ¼Å³Ê¸® ÃÊ±âÈ­
-    c = int(input())   # °Å½º¸§µ·
+    coin_dict = {k:0 for k in coin_tuple}   # ë™ì „ ë”•ì…”ë„ˆë¦¬ ì´ˆê¸°í™”
+    c = int(input())   # ê±°ìŠ¤ë¦„ëˆ
     for coin in coin_tuple:
-        coin_dict[coin] = int(c // coin)   # µ¿Àü °³¼ö
-        c = c % coin   # ³²Àº °Å½º¸§µ·
-        if c == 0:   # ³²Àº °Å½º¸§µ·ÀÌ ¾ø´Â °æ¿ì
-            for coin in coin_tuple:   # µ¿Àü °³¼ö Ãâ·Â
+        coin_dict[coin] = int(c // coin)   # ë™ì „ ê°œìˆ˜
+        c = c % coin   # ë‚¨ì€ ê±°ìŠ¤ë¦„ëˆ
+        if c == 0:   # ë‚¨ì€ ê±°ìŠ¤ë¦„ëˆì´ ì—†ëŠ” ê²½ìš°
+            for coin in coin_tuple:   # ë™ì „ ê°œìˆ˜ ì¶œë ¥
                 print(coin_dict[coin], end=' ')
             break
