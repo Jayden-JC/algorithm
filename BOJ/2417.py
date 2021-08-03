@@ -5,7 +5,7 @@ result = 0
 while start <= end:
     mid = (start + end) // 2
     if mid*mid >= n:
-        result = mid   # Á¶°ÇÀ» ¸¸Á·ÇÏ´Â °á°ú ¾÷µ¥ÀÌÆ®
+        result = mid   # ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” ê²°ê³¼ ì—…ë°ì´íŠ¸
         end = mid - 1
     else:
         start = mid + 1
